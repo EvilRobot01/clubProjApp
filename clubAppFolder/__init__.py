@@ -21,7 +21,7 @@ login_manager.init_app(app)
 login_manager.login_view='users.login'
 
 from clubAppFolder.core.views import core
-from clubAppFolder.user.views import users
+from clubAppFolder.users.views import users
 from clubAppFolder.error_pages.handlers import error_pages
 
 app.register_blueprint(core)

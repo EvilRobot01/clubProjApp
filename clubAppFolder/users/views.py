@@ -4,6 +4,7 @@ from clubAppFolder import db
 from clubAppFolder.models import User, BlogPost
 from clubAppFolder.users.forms import RegistrationForm, LoginForm, UpdateUserForm
 from clubAppFolder.users.picture_handler import add_profile_pic
+from werkzeug.security import generate_password_hash,check_password_hash
 
 users = Blueprint('users', __name__)
 

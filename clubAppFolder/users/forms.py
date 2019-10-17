@@ -8,9 +8,9 @@ from flask_login import current_user
 from clubAppFolder.models import User
 
 class LoginForm(FlaskForm):
-    email = StringField('Email', validator = [DataRequired(), Email()])
+    email = StringField('Email', validators = [DataRequired(), Email()])
     password = PasswordField('Password', validators=[DataRequired()])
-    submit = SubmitField('Log in')
+    submit = SubmitField('Log In')
 
 class RegistrationForm(FlaskForm):
     email = StringField('Email', validators=[DataRequired(), Email()])
