@@ -22,7 +22,7 @@ login_manager.login_view='users.login'
 
 from clubAppFolder.core.views import core
 from clubAppFolder.users.views import users
-from clubAppFolder.blog_posts.views import blog_post
+from clubAppFolder.project_posts.views import blog_post
 from clubAppFolder.error_pages.handlers import error_pages
 
 app.register_blueprint(core)
