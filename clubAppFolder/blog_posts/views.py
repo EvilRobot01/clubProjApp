@@ -12,7 +12,7 @@ def create_post():
     form = BlogPostForm()
 
     if form.validate_on_submit():
-        blog_post = BlogPost(title=form.tittle.data,
+        blog_post = BlogPost(title=form.title.data,
                             text=form.text.data,
                             user_id=current_user.id)
 
@@ -39,7 +39,7 @@ def update(blog_post_id):
     if blog_post.author != current_user:
         abort(403)
 
-    form = BlogPostForms()
+    form = BlogPostForm()
 
     if form.validate_on_submit():
         blog_post.title=form.tittle.data
