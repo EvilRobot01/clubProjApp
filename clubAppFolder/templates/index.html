@@ -4,15 +4,23 @@
     <h1 class="text-white">Club App Tittle</h1>
 </div>
 
-<div class="container-fluid bg-dark" style="padding: 0px;">
+<div class="container-fluid bg-dark mb-3" style="padding: 0px;">
     {% for post in blog_posts.items %}
         <div class="card w-auto bg-dark">
-            <div class="card-body">
-                <h2><a class="card-title text-white" href="{{url_for('blog_posts.blog_post', blog_post_id=post.id)}}">{{post.title}}</a>
-                    <a class="text-white" href="{{url_for('users.user_posts', username=post.author.username)}}">Written By: {{post.author.username}}</a>
-                    <p class="text-white">Published on: {{post.date.strftime('%Y-%m-%d')}}</p>
+            <div class="row no-gutters">
+                <div class="col-md-9">
+                    <div class="card-body">
+                        <h2>
+                            <a class="card-title text-white" href="{{url_for('blog_posts.blog_post', blog_post_id=post.id)}}">{{post.title}}</a>
+                            <a class="text-white" href="{{url_for('users.user_posts', username=post.author.username)}}">Written By: {{post.author.username}}</a>
+                            <p class="text-white">Published on: {{post.date.strftime('%Y-%m-%d')}}</p> 
+                        </h2>
+                    </div>
+                </div>
+                <div class="col-md-2" style="margin: 0px;">
                     <a class="btn btn-primary text-white" href="{{url_for('blog_posts.blog_post', blog_post_id=post.id)}}">Read Blog Post</a>
-                </h2>
+                    <a class="btn btn-primary text-white" href="{{url_for('blog_posts.blog_post', blog_post_id=post.id)}}">Read Blog Post</a>
+                </div>
             </div>
         </div>
     {% endfor %}
