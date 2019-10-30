@@ -45,12 +45,7 @@ def update(blog_post_id):
 
     if form.validate_on_submit():
 
-        if form.picture.data:
-            username = current_user.username
-            pic = add_blog_image(form.image.data, username)
-            current_user.profile_image = pic
-
-        blog_post.title=form.tittle.data
+        blog_post.title=form.title.data
         blog_post.text=form.text.data
         db.session.commit()
         flash('Post Updated')
@@ -60,7 +55,6 @@ def update(blog_post_id):
         form.title.data = blog_post.title
         form.text.data = blog_post.text
 
-    blog_image = url_for('static', filename='blog_images/'+current_user.blog_image)
     return render_template('create_post.html', title='Updating', form=form)
 
 
