@@ -8,18 +8,16 @@
     {% for post in blog_posts.items %}
         <div class="card w-auto bg-dark">
             <div class="row no-gutters">
-                <div class="col-md-9">
+                <div class="col-10">
                     <div class="card-body">
-                        <h2>
-                            <a class="card-title text-white" href="{{url_for('blog_posts.blog_post', blog_post_id=post.id)}}">{{post.title}}</a>
+                        <h2><a class="card-title text-white" href="{{url_for('blog_posts.blog_post', blog_post_id=post.id)}}">{{post.title}}</a></h2>
                             <a class="text-white" href="{{url_for('users.user_posts', username=post.author.username)}}">Written By: {{post.author.username}}</a>
                             <p class="text-white">Published on: {{post.date.strftime('%Y-%m-%d')}}</p> 
-                        </h2>
                     </div>
                 </div>
-                <div class="col-md-2" style="margin: 0px;">
-                    <a class="btn btn-primary text-white" href="{{url_for('blog_posts.blog_post', blog_post_id=post.id)}}">Read Blog Post</a>
-                    <a class="btn btn-primary text-white" href="{{url_for('blog_posts.blog_post', blog_post_id=post.id)}}">Read Blog Post</a>
+                <div class="col-auto">
+                    <a class="btn btn-primary text-white col" style="height: 35%; margin-top: 15%; margin-bottom: 10%; " href="{{url_for('blog_posts.blog_post', blog_post_id=post.id)}}">Up</a>
+                    <a class="btn btn-primary text-white col" style="height: 35%;" href="{{url_for('blog_posts.blog_post', blog_post_id=post.id)}}">Down</a>
                 </div>
             </div>
         </div>
